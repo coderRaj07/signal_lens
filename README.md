@@ -256,12 +256,6 @@ frontend/
 README.md
 ```
 
-Both are included in one repository for easier evaluation.
-
----
-
-Here’s a clean **table + bullet style** version you can directly paste into your `README.md`:
-
 ---
 
 ## 🎯 Project Status
