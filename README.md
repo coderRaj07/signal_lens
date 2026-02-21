@@ -288,9 +288,9 @@ README.md
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
-Rajendra Bisoi
-Backend Engineer
-Python | FastAPI | PostgreSQL | LLM Systems
-
+- **Name:** Rajendra Bisoi  
+- **Role:** Backend Engineer  
+- **Stack:** Python, FastAPI, Django, PostgreSQL, Redis, Celery, AWS
+- **Specialization:** LLM Systems  
