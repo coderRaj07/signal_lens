@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+asyncpg
+python-dotenv
+httpx
+beautifulsoup4
+lxml
+openai
+playwright
+trafilatura
