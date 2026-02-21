@@ -67,16 +67,6 @@ Deployment:
 
 * Backend → Render
 * Frontend → Vercel
-
-Perfect 👍 I’ll cleanly update your README section with:
-
-* ✅ Ubuntu/macOS venv instructions
-* ✅ Windows venv instructions
-* ✅ Frontend `.env` setup with `VITE_API_BASE`
-* ✅ Clear, professional formatting
-
-You can directly replace your **How to Run Locally** section with this updated version.
-
 ---
 
 # ▶️ How to Run Locally
