@@ -68,25 +68,53 @@ Deployment:
 * Backend → Render
 * Frontend → Vercel
 
+Perfect 👍 I’ll cleanly update your README section with:
+
+* ✅ Ubuntu/macOS venv instructions
+* ✅ Windows venv instructions
+* ✅ Frontend `.env` setup with `VITE_API_BASE`
+* ✅ Clear, professional formatting
+
+You can directly replace your **How to Run Locally** section with this updated version.
+
 ---
 
 # ▶️ How to Run Locally
 
-## 1️⃣ Clone
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/coderRaj07/signal_lens
-cd SignalLens_Backend
+cd signal_lens
 ```
 
 ---
 
-## 2️⃣ Create Virtual Environment
+# 🔹 Backend Setup
+
+Navigate to Backend folder:
 
 ```bash
-python -m venv venv
+cd SignalLens_Backend
+```
+
+## 2️⃣ Create Virtual Environment
+
+### 🐧 Ubuntu / macOS
+
+```bash
+python3 -m venv venv
 source venv/bin/activate
 ```
+
+### 🪟 Windows
+
+```powershell
+python -m venv venv
+venv\Scripts\activate
+```
+
+You should now see `(venv)` in your terminal.
 
 ---
 
@@ -99,13 +127,17 @@ playwright install chromium
 
 ---
 
-## 4️⃣ Create `.env`
+## 4️⃣ Create Backend `.env`
+
+Create a file named `.env` inside the backend root:
 
 ```
 DATABASE_URL=postgresql+asyncpg://USER:PASSWORD@HOST:PORT/DBNAME?ssl=require
 LLM_PROVIDER=openai
 OPENAI_API_KEY=your_key_here
 ```
+
+⚠ Do NOT commit `.env` to GitHub.
 
 ---
 
@@ -115,7 +147,13 @@ OPENAI_API_KEY=your_key_here
 uvicorn app.main:app --reload
 ```
 
-Swagger:
+Backend will run at:
+
+```
+http://127.0.0.1:8000
+```
+
+Swagger Docs:
 
 ```
 http://127.0.0.1:8000/docs
@@ -123,13 +161,64 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## 6️⃣ Run Frontend
+# 🔹 Frontend Setup
+
+Navigate to frontend folder:
 
 ```bash
 cd SignalLens_Frontend
+```
+
+---
+
+## 6️⃣ Create Frontend `.env`
+
+Inside the frontend root directory, create a file:
+
+```
+.env
+```
+
+Add:
+
+```
+VITE_API_BASE=http://127.0.0.1:8000
+```
+
+If using deployed backend instead:
+
+```
+VITE_API_BASE=https://signallens-backend.onrender.com
+```
+
+---
+
+## 7️⃣ Install & Run Frontend
+
+```bash
 npm install
 npm run dev
 ```
+
+Frontend runs at:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🌍 Environment Variables Summary
+
+### Backend `.env`
+
+* `DATABASE_URL`
+* `LLM_PROVIDER`
+* `OPENAI_API_KEY` or `CEREBRAS_API_KEY`
+
+### Frontend `.env`
+
+* `VITE_API_BASE`
 
 ---
 
