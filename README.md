@@ -260,27 +260,37 @@ Both are included in one repository for easier evaluation.
 
 ---
 
-# 🎯 What Is Done
-
-✅ Competitor CRUD
-✅ Snapshot storage
-✅ Text diff computation
-✅ Change percentage calculation
-✅ AI summary generation
-✅ Significant change detection
-✅ Last 5 check history
-✅ Basic failure handling
-✅ Cloud deployment
+Here’s a clean **table + bullet style** version you can directly paste into your `README.md`:
 
 ---
 
-# ❌ What Is NOT Done
+## 🎯 Project Status
 
-❌ DOM-aware diff
-❌ Structured pricing extraction
-❌ Distributed background workers
-❌ Automatic scheduling
-❌ Advanced bot-evasion for protected sites
+### ✅ What Is Done
+
+| Feature                       | Status |
+| ----------------------------- | ------ |
+| Competitor CRUD               | ✅      |
+| Snapshot Storage              | ✅      |
+| Text Diff Computation         | ✅      |
+| Change Percentage Calculation | ✅      |
+| AI Summary Generation         | ✅      |
+| Significant Change Detection  | ✅      |
+| Last 5 Check History          | ✅      |
+| Basic Failure Handling        | ✅      |
+| Cloud Deployment              | ✅      |
+
+---
+
+### ❌ What Is NOT Done
+
+| Feature                                | Status |
+| -------------------------------------- | ------ |
+| DOM-aware Diff                         | ❌      |
+| Structured Pricing Extraction          | ❌      |
+| Distributed Background Workers         | ❌      |
+| Automatic Scheduling                   | ❌      |
+| Advanced Bot-Evasion (Protected Sites) | ❌      |
 
 ---
 
