@@ -9,7 +9,7 @@ from app.utils.hashing import hash_content
 from app.repositories.snapshot_repo import SnapshotRepository
 from app.repositories.check_repo import CheckRepository
 from app.repositories.competitor_repo import CompetitorRepository
-
+from app.utils.logger import logger
 
 class CheckService:
 
@@ -28,6 +28,7 @@ class CheckService:
 
                 # ---------------- FETCH ----------------
                 try:
+                    logger.info("Starting competitor check", extra={"extra_info": {"competitor_id": competitor_id, "url": competitor.url}})
                     raw_html = await fetch_url(competitor.url)
                     content = extract_main_content(raw_html)
                 except Exception as e:
@@ -40,6 +41,7 @@ class CheckService:
                         change_percentage=0.0,
                         is_significant=False
                     )
+                    logger.error("Fetch failed", extra={"extra_info": {"competitor_id": competitor_id, "error": str(e)}})
                     return
 
                 content_hash = hash_content(content)
@@ -106,11 +108,19 @@ class CheckService:
                     change_percentage,
                     significant
                 )
+                
+                logger.info("Check completed successfully", extra={"extra_info": {
+                    "competitor_id": competitor_id,
+                    "change_percentage": change_percentage,
+                    "significant": significant
+                }})
 
-            except SQLAlchemyError:
+            except SQLAlchemyError as e:
                 await db.rollback()
+                logger.error("Database error during check", extra={"extra_info": {"competitor_id": competitor_id, "error": str(e)}})
                 raise
 
-            except Exception:
+            except Exception as e:
                 await db.rollback()
+                logger.error("Unexpected error during check", extra={"extra_info": {"competitor_id": competitor_id, "error": str(e)}})
                 raise

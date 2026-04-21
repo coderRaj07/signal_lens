@@ -9,3 +9,5 @@ lxml
 openai
 playwright
 trafilatura
+pytest
+pytest-asyncio

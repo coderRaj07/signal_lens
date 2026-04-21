@@ -1,7 +1,7 @@
 import httpx
 from app.config import CEREBRAS_API_KEY
 from app.services.llm.base import BaseLLM
-
+from app.utils.logger import logger
 CEREBRAS_ENDPOINT = "https://api.cerebras.ai/v1/chat/completions"
 
 class CerebrasProvider(BaseLLM):
@@ -75,4 +75,18 @@ class CerebrasProvider(BaseLLM):
             response.raise_for_status()
             data = response.json()
 
+            usage = data.get("usage", {})
+            tokens = usage.get("total_tokens", 0)
+            prompt_tokens = usage.get("prompt_tokens", 0)
+            completion_tokens = usage.get("completion_tokens", 0)
+
+            logger.info("LLM Inference (Cerebras)", extra={"extra_info": {
+                "provider": "cerebras",
+                "model": "llama3.1-8b",
+                "tokens": tokens,
+                "prompt_tokens": prompt_tokens,
+                "completion_tokens": completion_tokens
+            }})
+
             return data["choices"][0]["message"]["content"]
+
