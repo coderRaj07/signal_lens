@@ -20,7 +20,7 @@ Frontend:
 👉 [https://signal-lens-frontend.vercel.app](https://signal-lens-frontend.vercel.app)
 
 Backend API Docs:
-👉 [https://signallens-backend.onrender.com/docs](https://signallens-backend.onrender.com/docs)
+👉 [https://signal-lens.vercel.app/docs](https://signal-lens.vercel.app/docs)
 
 ---
 
@@ -178,7 +178,7 @@ VITE_API_BASE=http://127.0.0.1:8000
 If using deployed backend instead:
 
 ```
-VITE_API_BASE=https://signallens-backend.onrender.com
+VITE_API_BASE=https://signal-lens.vercel.app
 ```
 
 ---

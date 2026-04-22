@@ -14,7 +14,7 @@ SignalLens is a competitive intelligence backend system that:
 Deployed Backend:
 
 ```
-https://signallens-backend.onrender.com/
+https://signal-lens.vercel.app/
 ```
 
 ---
